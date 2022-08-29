@@ -14,7 +14,7 @@ namespace Assignment1
             while (Convert.ToBoolean(choice))
             {
                 Console.Clear();
-                Console.WriteLine("Enter your Choice :\n1 for register Doctor\n2 for register Patient\n3 for book bed for patient\n0 for exit");
+                Console.WriteLine("Enter your Choice :\n1 for register Doctor\n2 for register Patient\n3 for book bed for patient");
                 choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -25,7 +25,7 @@ namespace Assignment1
                         int dchoice = 2;
                         while (Convert.ToBoolean(dchoice))
                         {
-                            Console.WriteLine("Press 1 for Enter the data\nPress 2 for display the data\nPress 0 for exit");
+                            Console.WriteLine("Press 1 for Enter the data\nPress 2 for display the data");
                             dchoice = int.Parse(Console.ReadLine());
                             if (dchoice == 1)
                             {
@@ -52,22 +52,22 @@ namespace Assignment1
                         int pchoice = 2;
                         while (Convert.ToBoolean(pchoice))
                         {
-                            Console.WriteLine("Press 1 for Enter the data\nPress 2 for display the data\nPress 0 for exit");
-                            dchoice = int.Parse(Console.ReadLine());
-                            if (dchoice == 1)
+                            Console.WriteLine("Press 1 for Enter the data\nPress 2 for display the data");
+                            pchoice = int.Parse(Console.ReadLine());
+                            if (pchoice == 1)
                             {
                                 oPatient.registerData();
-                                isDoctorDetailAvailable = true;
+                                isPatientDetailAvailable = true;
                             }
 
-                            if (dchoice == 2 && isPatientDetailAvailable == true)
+                            if (pchoice == 2 && isPatientDetailAvailable == true)
                             {
                                 oPatient.displayData();
                             }
 
-                            if (dchoice == 2 && isPatientDetailAvailable == false)
+                            if (pchoice == 2 && isPatientDetailAvailable == false)
                             {
-                                Console.WriteLine("You don't have any detail to show. Enter the doctor detail first");
+                                Console.WriteLine("You don't have any detail to show. Enter the Patient detail first");
                                 Console.ReadLine();
                             }
 
@@ -75,10 +75,10 @@ namespace Assignment1
                         break;
                     case 3:
                         CBooking oBooking = new CBooking();
+                        Console.WriteLine();
                         oBooking.registerData();
                         oBooking.displayData();
                         Console.ReadLine();
-                        break;
                         break;
 
                     default:

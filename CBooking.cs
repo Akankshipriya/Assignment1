@@ -15,7 +15,7 @@ namespace Assignment1
         {
             Random rd = new Random();
             Console.WriteLine("Enter the following to book your appointment");
-            bedBookingId = rd.Next(1000, 999);
+            bedBookingId = rd.Next(100, 999);
             Console.WriteLine("Enter patient Id");
             if (patientID==0)
             {
