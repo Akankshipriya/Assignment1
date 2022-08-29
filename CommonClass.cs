@@ -19,10 +19,6 @@ namespace Assignment1
 
         public virtual void registerData()
         {
-        //    Console.WriteLine("Enter Id Number");
-        //    id = int.Parse(Console.ReadLine());
-            //Console.WriteLine("Enter Name");
-            //name = Console.ReadLine();
             Console.WriteLine("Enter Phone Number");
             phoneNumber = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Email Id");

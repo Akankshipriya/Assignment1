@@ -24,6 +24,7 @@ namespace Assignment1
             base.registerData();
             Console.WriteLine("Enter Experience");
             yearExperience = int.Parse(Console.ReadLine());
+
         }
 
         public void displayData()

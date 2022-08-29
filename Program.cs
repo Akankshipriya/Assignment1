@@ -16,7 +16,7 @@ namespace Assignment1
                 Console.Clear();
                 Console.WriteLine("Enter your Choice :\n1 for register Doctor\n2 for register Patient\n3 for book bed for patient");
                 choice = int.Parse(Console.ReadLine());
-
+                bool isPatientDetailAvailable = false;
                 switch (choice)
                 {
                     case 1:
@@ -48,7 +48,6 @@ namespace Assignment1
                         break;
                     case 2:
                         CPatient oPatient = new CPatient();
-                        bool isPatientDetailAvailable = false;
                         int pchoice = 2;
                         while (Convert.ToBoolean(pchoice))
                         {
@@ -75,10 +74,30 @@ namespace Assignment1
                         break;
                     case 3:
                         CBooking oBooking = new CBooking();
-                        Console.WriteLine();
-                        oBooking.registerData();
-                        oBooking.displayData();
-                        Console.ReadLine();
+                        int bchoice = 2;
+                        bool isBookingDetailAvailable = false;
+                        while (Convert.ToBoolean(bchoice))
+                        {
+                            Console.WriteLine("Press 1 for Enter the data\nPress 2 for display the data");
+                            bchoice = int.Parse(Console.ReadLine());
+                            if (bchoice == 1)
+                            {
+                                oBooking.registerData();
+                                isBookingDetailAvailable = true;
+                            }
+
+                            if (bchoice == 2 && isBookingDetailAvailable == true)
+                            {
+                                oBooking.displayData();
+                            }
+
+                            if (bchoice == 2 && isBookingDetailAvailable == false)
+                            {
+                                Console.WriteLine("You don't have any detail to show. Enter the Booking detail first");
+                                Console.ReadLine();
+                            }
+
+                        }
                         break;
 
                     default:
